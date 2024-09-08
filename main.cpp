@@ -40,7 +40,7 @@ public:
   CDnsSeedOpts() : nThreads(96), nDnsThreads(4), ip_addr("::"), nPort(53), nP2Port(0), nMinimumHeight(0), mbox(NULL), ns(NULL), host(NULL), tor(NULL), fUseTestNet(false), fWipeBan(false), fWipeIgnore(false), ipv4_proxy(NULL), ipv6_proxy(NULL), magic(NULL) {}
 
   void ParseCommandLine(int argc, char **argv) {
-    static const char *help = "Litecoin-seeder\n"
+    static const char *help = "Ferrrite-seeder\n"
                               "Usage: %s -h <host> -n <ns> [-m <mbox>] [-t <threads>] [-p <port>]\n"
                               "\n"
                               "Options:\n"
@@ -480,8 +480,8 @@ extern "C" void* ThreadStats(void*) {
   return nullptr;
 }
 
-static const string mainnet_seeds[] = {"dnsseed.litecoinpool.org", "seed-a.litecoin.loshan.co.uk", "dnsseed.thrasher.io", ""};
-static const string testnet_seeds[] = {"seed-b.litecoin.loshan.co.uk", "dnsseed-testnet.thrasher.io", ""};
+static const string mainnet_seeds[] = {"node1.ferritecoin.org", "node2.ferritecoin.org", "node3.ferritecoin.org", ""};
+static const string testnet_seeds[] = {"test1.ferritecoin.org", "test2.ferritecoin.org", "test3.ferritecoin.org", ""};
 static const string *seeds = mainnet_seeds;
 static vector<string> vSeeds;
 
@@ -545,10 +545,10 @@ int main(int argc, char **argv) {
   bool fDNS = true;
   if (opts.fUseTestNet) {
       printf("Using testnet.\n");
-      pchMessageStart[0] = 0xfd;
-      pchMessageStart[1] = 0xd2;
-      pchMessageStart[2] = 0xc8;
-      pchMessageStart[3] = 0xf1;
+      pchMessageStart[0] = 0xba;
+      pchMessageStart[1] = 0x76;
+      pchMessageStart[2] = 0xab;
+      pchMessageStart[3] = 0x8a;
       seeds = testnet_seeds;
       fTestNet = true;
   }

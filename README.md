@@ -1,18 +1,18 @@
-litecoin-seeder
+ferrite-seeder
 ===============
 
-Litecoin-seeder is a crawler for the Litecoin network, which exposes a list
+ferrite-seeder is a crawler for the Ferritecoin network, which exposes a list
 of reliable nodes via a built-in DNS server.
 
 Features:
 * regularly revisits known nodes to check their availability
 * bans nodes after enough failures, or bad behaviour
-* accepts nodes down to v0.5.0 to request new IP addresses from,
-  but only reports good post-v0.6.9 nodes.
+* accepts nodes down to v3.0.0 to request new IP addresses from,
+  but only reports good post-v3.1.3 nodes.
 * keeps statistics over (exponential) windows of 2 hours, 8 hours,
   1 day and 1 week, to base decisions on.
 * very low memory (a few tens of megabytes) and cpu requirements.
-* crawlers run in parallel (by default 96 threads simultaneously).
+* crawlers run in parallel (by default 192 threads simultaneously).
 
 REQUIREMENTS
 ------------
