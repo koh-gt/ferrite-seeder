@@ -17,7 +17,9 @@ Features:
 REQUIREMENTS
 ------------
 
-$ sudo apt-get install build-essential libboost-all-dev libssl-dev
+```bash
+sudo apt-get install build-essential libboost-all-dev libssl-dev libcurl4-openssl-dev libconfig++-dev
+```
 
 USAGE
 -----
@@ -33,10 +35,16 @@ dnsseed.example.com.   86400    IN      NS     vps.example.com.
 
 On the system vps.example.com, you can now run dnsseed:
 
-./dnsseed -h dnsseed.example.com -n vps.example.com
+```
+./dnsseed -h dnsseed.ferritecoin.com -n vps.ferritecoin.com -m system@ferritecoin.org
+```
 
 If you want the DNS server to report SOA records, please provide an
 e-mail address (with the @ part replaced by .) using -m.
+
+#### Namecheap
+A Record     vps        118.8.8.8              Automatic
+NS Record    dnsseed    vps.ferritecoin.com    Automatic
 
 COMPILING
 ---------
@@ -44,7 +52,9 @@ COMPILING
 Compiling will require boost and ssl.  On debian systems, these are provided
 by `libboost-dev` and `libssl-dev` respectively.
 
-$ make
+```bash
+make
+```
 
 This will produce the `dnsseed` binary.
 
